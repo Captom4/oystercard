@@ -16,12 +16,12 @@ describe OysterCard do
     it 'Raises an error if the maximum amount is passed' do
       maximum_balance = OysterCard::MAXIMUM_BALANCE
       subject.top_up maximum_balance
-      expect { subject.top_up 1 }.to raise_error 'Maximum balance of #{maximum_balance} passed'
+      expect { subject.top_up 1 }.to raise_error "Maximum balance of #{maximum_balance} passed"
     end
-    
+
     it 'deducts an amount from the balance' do
       subject.top_up(20)
-      expect{ subject.deduct 3}.to change{ subject.balance }.by -3
+      expect { subject.deduct 3 }.to change { subject.balance }.by -3
+    end
   end
-end
 end
