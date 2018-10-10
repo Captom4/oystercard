@@ -9,4 +9,9 @@ class OysterCard
     raise 'Maximum balance passed' if ammount + balance > MAXIMUM_BALANCE
     @balance += ammount
   end
+  
+  def deduct(amount)
+    @balance -= amount
+  end
+  
 end
